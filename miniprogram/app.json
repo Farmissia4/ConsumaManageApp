@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/consumables/consumables",
+    "pages/booking/booking",
+    "pages/avaSearch/avaSearch",
+    "pages/bookSearch/bookSearch",
+    "pages/utils/util"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#B0C4DE",
+    "navigationBarTitleText": "FX Management",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#625b57",
+    "selectedColor": "#B0C4DE",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/booking/booking",
+        "text": "预约",
+        "iconPath": "images/book.png",
+        "selectedIconPath": "images/book-selected.png"
+      },
+      {
+        "pagePath": "pages/avaSearch/avaSearch",
+        "text": "状态",
+        "iconPath": "images/ava.png",
+        "selectedIconPath": "images/ava-selected.png"
+      },
+      {
+        "pagePath": "pages/bookSearch/bookSearch",
+        "text": "我的预订",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me-selected.png"
+      },
+      {
+        "pagePath": "pages/consumables/consumables",
+        "text": "耗材",
+        "iconPath": "images/Consum.png",
+        "selectedIconPath": "images/Consum-selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

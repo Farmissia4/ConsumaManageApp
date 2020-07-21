@@ -1,0 +1,66 @@
+/* miniprogram/pages/consumables/consumables.wxss */
+
+page{
+  min-height: 100%;
+  background-color: #f6f6f6;
+  font-family: "微软雅黑";
+  font-size: 40rpx;
+  color: #353535;
+  width:100%;
+}
+
+.title{
+  height: 80rpx;
+  justify-content: center;
+  display: flex;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.item{
+  height:80rpx;
+  justify-content: space-between;
+  align-items: center;
+  display:flex;
+  margin-left:30rpx;
+  padding: 5rpx 30rpx 5rpx 0;
+  border-bottom:1rpx solid #eee;
+}
+
+.right{
+    padding-left: 30rpx;
+    display: flex;
+    color: #353535;
+    font-size: medium;
+    width: 75%;
+}
+
+.rightScan{
+  padding-left: 30rpx;
+    display: flex;
+    color: #353535;
+    font-size: medium;
+    width: 55%;
+}
+
+.input{
+  padding-left: 20rpx;
+  width:100%;
+  display: flex;
+}
+
+input placeholder{
+  color:#939393;
+}
+
+.submit{
+  margin-top: 30rpx;
+  width:60%;
+}
+
+.scanbarcode{
+  width:50rpx;
+  float:right;
+  margin-right:20rpx;
+  align-items: center;
+}

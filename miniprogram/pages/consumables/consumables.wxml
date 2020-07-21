@@ -1,0 +1,82 @@
+<!--miniprogram/pages/consumables/consumables.wxml-->
+
+<!--设置屏幕可以上下滑动-->
+<scroll-view class="scroll-view-y" scroll-y = "true" style = "height:100%">
+<text class="title">耗材出入库统计</text>
+
+<!--页面表格设置-->
+<form bindsubmit = "formSubmit" catchreset = "formReset" report-submit="ture">
+
+<!--显示当前日期时间-->
+<view class = "item">
+  <text>日期时间:{{currentDt}}</text>
+</view>
+
+<!--出入库选择器-->
+<view class= "item">
+  <text class ="left">出入库</text>
+    <picker class="right" value="{{inOutValue}}" range="{{inOutRange}}" 
+    bindchange="inOutPickerBindchange">
+    {{inOutRange[inOutValue]}}
+    </picker>
+</view>
+
+<!--货号：手动录入(input)或者点击条码图标进行扫码(scanPartNo)，成功后自动录入-->
+<view class="item" >
+ <text class = "left">货号</text>
+  <input class="rightScan" value="{{partNo}}" type="text" bindinput="bindKeyInputPartNo" focus="{{focus}}"/>
+  <view bindtap="scanPartNo">
+    <image class="scanbarcode" mode="widthFix" src = "../../images/barcode.png"></image>
+  </view>
+</view>
+
+<!--仪器,名称和部件：手动输入(input）或者点击刷新图标(autoFill)自动关联数据库刷新耗材仪器，名称和部件信息-->
+<view class= "item">
+  <text class ="left">仪器</text>
+   <input class="rightScan" value="{{facilityType}}" bindinput="bindKeyInputFacilityType" type="text"
+    placeholder = "Optional" focus="{{focus}}"></input>
+  <view bindtap="autoFill">
+    <image class="scanbarcode" mode="widthFix" src = "../../images/refresh.png"></image>
+  </view>
+</view>
+
+<view class= "item">
+  <text class ="left">名称</text>
+    <input class="right" value="{{name}}" type = "text" bindinput="bindKeyInputName" focus="{{focus}}"></input>
+</view>
+
+<view class= "item">
+  <text class ="left">部件</text>
+    <input class="right" value="{{part}}" type = "text" bindinput="bindKeyInputPart" focus="{{focus}}"></input>
+</view>
+
+<!--耗材数量输入：数字键盘-->
+<view class= "item">
+  <text class ="left">数量</text>
+    <input class="right" value="{{number}}" type = "number" bindinput="bindKeyInputNumber" focus="{{focus}}"></input>
+</view>
+
+<!--耗材单位选择器-->
+<view class= "item">
+  <text class ="left">单位</text>
+    <picker class="right" value="{{unitsValue}}" range="{{unitsRange}}" 
+    bindchange="unitsPickerBindchange">
+    {{unitsRange[unitsValue]}}
+    </picker>
+</view>
+
+<!--SN号：手动录入(input)或者点击条码图标进行扫码(scanPartNo)，成功后自动录入-->
+<view class= "item">
+  <text class ="left">SN</text>
+    <input class="rightScan" value="{{SN}}" type = "text" bindinput="bindKeyInputSN" focus="{{focus}}"></input>
+    <view bindtap="scanSN">
+      <image class="scanbarcode" mode="widthFix" src = "../../images/barcode.png"></image>
+    </view>
+</view>
+
+<!--提交和取消按键-->
+<button class = "submit" plain = "true" formType="submit">提交</button>
+<button class = "submit" plain = "true" formType="reset">取消</button>
+
+</form>
+</scroll-view>
